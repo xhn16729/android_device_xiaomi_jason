@@ -204,7 +204,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 
 # Camera
 PRODUCT_PACKAGES += \
-    Snap \
+    GoogleCamera \
     android.hardware.camera.provider@2.4-impl \
     android.hardware.camera.provider@2.4-service
 
