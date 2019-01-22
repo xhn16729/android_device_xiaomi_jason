@@ -418,4 +418,6 @@
 
     <bool name="config_button_brightness_support">true</bool>
 
+    <integer name="config_deviceHardwareKeys">83</integer>
+
 </resources>
