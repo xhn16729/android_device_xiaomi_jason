@@ -57,6 +57,7 @@ BOARD_KERNEL_IMAGE_NAME := Image.gz-dtb
 TARGET_KERNEL_CROSS_COMPILE_PREFIX := aarch64-linux-android-
 TARGET_KERNEL_SOURCE := kernel/xiaomi/jason
 TARGET_KERNEL_CONFIG := lineageos_jason_defconfig
+TARGET_KERNEL_VERSION := 4.4
 
 # QCOM hardware
 BOARD_USES_QCOM_HARDWARE := true
@@ -224,6 +225,7 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/recovery.fstab
 
 # RIL
 #TARGET_RIL_VARIANT := caf
+TARGET_USES_OLD_MNC_FORMAT := true
 
 # Releasetools
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_jason
@@ -238,6 +240,7 @@ BOARD_SYSTEMSDK_VERSIONS := 28
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 
+BOARD_PLAT_PUBLIC_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/public
 BOARD_PLAT_PRIVATE_SEPOLICY_DIR += $(DEVICE_PATH)/sepolicy/private
 BOARD_SEPOLICY_DIRS += $(DEVICE_PATH)/sepolicy/vendor
 

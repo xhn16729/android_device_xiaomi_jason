@@ -4,8 +4,8 @@ LOCAL_PATH:= $(call my-dir)
 
 include $(CLEAR_VARS)
 
-SDCLANG_COMMON_DEFS := $(LOCAL_PATH)/sdllvm-common-defs.mk
-SDCLANG_FLAG_DEFS := $(LOCAL_PATH)/sdllvm-flag-defs.mk
+#SDCLANG_COMMON_DEFS := $(LOCAL_PATH)/sdllvm-common-defs.mk
+#SDCLANG_FLAG_DEFS := $(LOCAL_PATH)/sdllvm-flag-defs.mk
 
 LOCAL_COPY_HEADERS_TO := qcom/camera
 LOCAL_COPY_HEADERS := QCameraFormat.h
