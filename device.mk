@@ -1,5 +1,5 @@
 # 
-# Copyright (C) 2017-2018 The LineageOS Project
+# Copyright (C) 2017-2019 The LineageOS Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -106,6 +106,7 @@ PRODUCT_CHARACTERISTICS := nosdcard
 
 # Alipay
 PRODUCT_PACKAGES += \
+    IFAAService \
     org.ifaa.android.manager
 
 PRODUCT_BOOT_JARS += \
@@ -225,150 +226,151 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.hist.high=20 \
     persist.camera.hist.drc=1.2 \
-    persist.camera.sat.enable=1 \
-    persist.vendor.camera.expose.aux=0 \
-    persist.vendor.camera.sat.enable=1 \
-    persist.camera.instant.aec=1 \
-    persist.vendor.camera.instant.aec=1 \
-    persist.vendor.camera.ae.instant.bound=20 \
-    persist.vendor.camera.set.afd=4 \
-    persist.camera.feature.cac=1 \
-    persist.vendor.camera.feature.cac=1 \
-    persist.camera.fovc.enable=1 \
-    persist.vendor.camera.fovc.enable=1 \
-    persist.vendor.dualcam.lpm.enable=1 \
-    persist.vendor.dualcam.defer.enable=1
+persist.camera.sat.enable=1 \
+persist.vendor.camera.expose.aux=0 \
+persist.vendor.camera.sat.enable=1 \
+persist.camera.instant.aec=1 \
+persist.vendor.camera.instant.aec=1 \
+persist.vendor.camera.ae.instant.bound=20 \
+persist.vendor.camera.set.afd=4 \
+persist.camera.feature.cac=1 \
+persist.vendor.camera.feature.cac=1 \
+persist.camera.fovc.enable=1 \
+persist.vendor.camera.fovc.enable=1 \
+persist.vendor.dualcam.lpm.enable=1 \
+persist.vendor.dualcam.defer.enable=1
 
 # ConfigPanel
 PRODUCT_PACKAGES += \
-    ConfigPanel
+ConfigPanel
 
 # Connectivity Engine support (CNE)
 PRODUCT_PACKAGES += \
-    cneapiclient \
-    com.quicinc.cne \
-    services-ext
+cneapiclient \
+com.quicinc.cne \
+services-ext
 
 # Consumerir
 PRODUCT_PACKAGES += \
-    android.hardware.ir@1.0-impl \
-    android.hardware.ir@1.0-service
+android.hardware.ir@1.0-impl \
+android.hardware.ir@1.0-service
 
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
+frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
 
 # Display
 PRODUCT_PACKAGES += \
-    copybit.sdm660 \
-    gralloc.sdm660 \
-    hwcomposer.sdm660 \
-    memtrack.sdm660 \
-    libdisplayconfig \
-    liboverlay \
-    libqdMetaData.system \
-    libtinyxml
+copybit.sdm660 \
+gralloc.sdm660 \
+hwcomposer.sdm660 \
+memtrack.sdm660 \
+libdisplayconfig \
+liboverlay \
+libqdMetaData.system \
+libtinyxml
 
 PRODUCT_PACKAGES += \
-    android.hardware.graphics.allocator@2.0-impl \
-    android.hardware.graphics.allocator@2.0-service \
-    android.hardware.graphics.mapper@2.0-impl \
-    android.hardware.graphics.composer@2.1-impl \
-    android.hardware.graphics.composer@2.1-service \
-    android.hardware.memtrack@1.0-impl \
-    android.hardware.memtrack@1.0-service \
-    android.hardware.configstore@1.0-service \
-    android.hardware.broadcastradio@1.0-impl
+android.hardware.graphics.allocator@2.0-impl \
+android.hardware.graphics.allocator@2.0-service \
+android.hardware.graphics.mapper@2.0-impl \
+android.hardware.graphics.composer@2.1-impl \
+android.hardware.graphics.composer@2.1-service \
+android.hardware.memtrack@1.0-impl \
+android.hardware.memtrack@1.0-service \
+android.hardware.configstore@1.0-service \
+android.hardware.broadcastradio@1.0-impl
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.opengles.version=196610 \
-    ro.sf.lcd_density=420
+ro.opengles.version=196610 \
+ro.sf.lcd_density=420
 
 # DRM
 PRODUCT_PACKAGES += \
-    android.hardware.drm@1.0-impl \
-    android.hardware.drm@1.0-service \
-    android.hardware.drm@1.1-service.clearkey
+android.hardware.drm@1.0-impl \
+android.hardware.drm@1.0-service \
+android.hardware.drm@1.1-service.clearkey
 
 # Fingerprint feature
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.jason
+android.hardware.biometrics.fingerprint@2.1-service.jason
 
 PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
+frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
 # Gatekeeper HAL
 PRODUCT_PACKAGES += \
-    android.hardware.gatekeeper@1.0-impl \
-    android.hardware.gatekeeper@1.0-service
+android.hardware.gatekeeper@1.0-impl \
+android.hardware.gatekeeper@1.0-service
 
 # GPS
 PRODUCT_PACKAGES += \
-    libcurl \
-    libgnss \
-    libgnsspps \
-    libsensorndkbridge \
-    android.hardware.gnss@1.0-impl-qti \
-    android.hardware.gnss@1.0-service-qti
+libcurl \
+libgnss \
+libgnsspps \
+libsensorndkbridge \
+android.hardware.gnss@1.0-impl-qti \
+android.hardware.gnss@1.0-service-qti
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/gps/etc/apdr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/apdr.conf \
-    $(LOCAL_PATH)/gps/etc/flp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/flp.conf \
-    $(LOCAL_PATH)/gps/etc/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf \
-    $(LOCAL_PATH)/gps/etc/izat.conf:$(TARGET_COPY_OUT_VENDOR)/etc/izat.conf \
-    $(LOCAL_PATH)/gps/etc/lowi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/lowi.conf \
-    $(LOCAL_PATH)/gps/etc/sap.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sap.conf \
-    $(LOCAL_PATH)/gps/etc/xtwifi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/xtwifi.conf
+$(LOCAL_PATH)/gps/etc/apdr.conf:$(TARGET_COPY_OUT_VENDOR)/etc/apdr.conf \
+$(LOCAL_PATH)/gps/etc/flp.conf:$(TARGET_COPY_OUT_VENDOR)/etc/flp.conf \
+$(LOCAL_PATH)/gps/etc/gps.conf:$(TARGET_COPY_OUT_VENDOR)/etc/gps.conf \
+$(LOCAL_PATH)/gps/etc/izat.conf:$(TARGET_COPY_OUT_VENDOR)/etc/izat.conf \
+$(LOCAL_PATH)/gps/etc/lowi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/lowi.conf \
+$(LOCAL_PATH)/gps/etc/sap.conf:$(TARGET_COPY_OUT_VENDOR)/etc/sap.conf \
+$(LOCAL_PATH)/gps/etc/xtwifi.conf:$(TARGET_COPY_OUT_VENDOR)/etc/xtwifi.conf
 
 # Healthd
 PRODUCT_PACKAGES += \
-    android.hardware.health@2.0-impl \
-    android.hardware.health@2.0-service
+android.hardware.health@2.0-impl \
+android.hardware.health@2.0-service
 
 # HIDL
 PRODUCT_PACKAGES += \
-    android.hidl.base@1.0
+android.hidl.base@1.0
 
 # Input
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/excluded-input-devices.xml:system/etc/excluded-input-devices.xml
+$(LOCAL_PATH)/configs/excluded-input-devices.xml:system/etc/excluded-input-devices.xml
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/idc/uinput-fpc.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/uinput-fpc.idc \
-    $(LOCAL_PATH)/idc/uinput-goodix.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/uinput-goodix.idc
+$(LOCAL_PATH)/idc/uinput-fpc.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/uinput-fpc.idc \
+$(LOCAL_PATH)/idc/uinput-goodix.idc:$(TARGET_COPY_OUT_VENDOR)/usr/idc/uinput-goodix.idc
 
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/gpio-keys.kl \
-    $(LOCAL_PATH)/keylayout/synaptics_dsx.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/synaptics_dsx.kl \
-    $(LOCAL_PATH)/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-fpc.kl \
-    $(LOCAL_PATH)/keylayout/uinput-goodix.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-goodix.kl
+$(LOCAL_PATH)/keylayout/gpio-keys.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/gpio-keys.kl \
+$(LOCAL_PATH)/keylayout/synaptics_dsx.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/synaptics_dsx.kl \
+$(LOCAL_PATH)/keylayout/uinput-fpc.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-fpc.kl \
+$(LOCAL_PATH)/keylayout/uinput-goodix.kl:$(TARGET_COPY_OUT_VENDOR)/usr/keylayout/uinput-goodix.kl
 
 # IPv6
 PRODUCT_PACKAGES += \
-    ebtables \
-    ethertypes
+ebtables \
+ethertypes
 
 # IRQ
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
+$(LOCAL_PATH)/configs/msm_irqbalance.conf:$(TARGET_COPY_OUT_VENDOR)/etc/msm_irqbalance.conf
 
 # IRSC
 PRODUCT_COPY_FILES += \
-    $(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
+$(LOCAL_PATH)/configs/sec_config:$(TARGET_COPY_OUT_VENDOR)/etc/sec_config
 
 # Keymaster HAL
 PRODUCT_PACKAGES += \
-    android.hardware.keymaster@3.0-impl \
-    android.hardware.keymaster@3.0-service
+android.hardware.keymaster@3.0-impl \
+android.hardware.keymaster@3.0-service
 
 # Lights
 PRODUCT_PACKAGES += \
-    android.hardware.light@2.0-impl \
-    android.hardware.light@2.0-service \
-    lights.sdm660
+android.hardware.light@2.0-impl \
+android.hardware.light@2.0-service \
+lights.sdm660
 
 # LiveDisplay
 PRODUCT_PACKAGES += \
-    vendor.lineage.livedisplay@2.0-service-sdm
+    vendor.lineage.livedisplay@2.0-service-sdm \
+    vendor.lineage.livedisplay@2.0-service-sysfs
 
 # Media
 PRODUCT_COPY_FILES += \

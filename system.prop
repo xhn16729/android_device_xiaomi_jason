@@ -219,6 +219,7 @@ ro.config.vc_call_vol_steps=11
 #For camera
 camera.hal1.packagelist=com.whatsapp,com.facebook.katana,com.instagram.android,com.snapchat.android,com.tencent.mm
 vendor.camera.hal1.packagelist=com.whatsapp,com.intsig.camscanner
+vendor.camera.aux.packageblacklist=com.tencent.mm
 
 # AD and sensor config
 ro.qcom.ad=1
