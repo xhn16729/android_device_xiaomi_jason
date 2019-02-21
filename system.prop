@@ -218,10 +218,9 @@ ro.config.vc_call_vol_steps=11
 
 #For camera
 camera.hal1.packagelist=com.whatsapp,com.facebook.katana,com.instagram.android,com.snapchat.android,com.tencent.mm
+vendor.camera.hal1.packagelist=com.whatsapp,com.intsig.camscanner
 
 # AD and sensor config
 ro.qcom.ad=1
 ro.qcom.ad.calib.data=/vendor/etc/calib.cfg
 ro.qcom.ad.sensortype=2
-
-vendor.camera.hal1.packagelist=com.whatsapp,com.intsig.camscanner
