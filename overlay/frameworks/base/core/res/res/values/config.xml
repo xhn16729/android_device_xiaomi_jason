@@ -420,4 +420,7 @@
 
     <integer name="config_deviceHardwareKeys">83</integer>
 
+    <!-- Lawnchair Launcher-->
+    <string name="config_recentsComponentName" translatable="false">ch.deletescape.lawnchair.ci/com.android.quickstep.RecentsActivity</string>
+    
 </resources>
