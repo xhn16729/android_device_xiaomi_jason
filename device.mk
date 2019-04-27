@@ -370,6 +370,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/launcher/Lawnchair/etc/privapp-permissions-lawnchair.xml:system/etc/permissions/privapp-permissions-lawnchair.xml \
     $(LOCAL_PATH)/launcher/Lawnchair/etc/lawnchair-hiddenapi-package-whitelist.xml:system/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml
 
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.boot.vendor.overlay.theme=com.overlay.lawnconf
+
+
 # Lights
 PRODUCT_PACKAGES += \
     android.hardware.light@2.0-impl \
