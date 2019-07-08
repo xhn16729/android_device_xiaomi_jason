@@ -95,7 +95,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.radio.sib16_support=1 \
     persist.vendor.radio.custom_ecc=1 \
     persist.vendor.radio.rat_on=combine \
-    persist.radio.schd.cache=3500 \
     sys.vendor.shutdown.waittime=500 \
     ro.frp.pst=/dev/block/bootdevice/by-name/frp \
     persist.radio.multisim.config=dsds \
@@ -215,7 +214,6 @@ PRODUCT_COPY_FILES += \
 
 # Bluetooth
 PRODUCT_PROPERTY_OVERRIDES += \
-    qcom.bluetooth.soc=cherokee \
     vendor.qcom.bluetooth.soc=cherokee
 
 # Camera
@@ -229,16 +227,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.camera.hist.high=20 \
     persist.camera.hist.drc=1.2 \
-    persist.camera.sat.enable=1 \
     persist.vendor.camera.expose.aux=1 \
     persist.vendor.camera.sat.enable=1 \
-    persist.camera.instant.aec=1 \
     persist.vendor.camera.instant.aec=1 \
     persist.vendor.camera.ae.instant.bound=20 \
     persist.vendor.camera.set.afd=4 \
-    persist.camera.feature.cac=1 \
     persist.vendor.camera.feature.cac=1 \
-    persist.camera.fovc.enable=1 \
     persist.vendor.camera.fovc.enable=1 \
     persist.vendor.dualcam.lpm.enable=1 \
     persist.vendor.dualcam.defer.enable=1
@@ -295,7 +289,8 @@ PRODUCT_PACKAGES += \
 
 # Fingerprint feature
 PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint@2.1-service.jason
+    android.hardware.biometrics.fingerprint@2.1-service.jason \
+    move_goodix_data.sh
 
 PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
@@ -499,6 +494,8 @@ PRODUCT_PACKAGES += \
 
 # RIL
 PRODUCT_PACKAGES += \
+    android.hardware.radio@1.2 \
+    android.hardware.radio.config@1.0 \
     librmnetctl \
     libxml2 \
     libprotobuf-cpp-full

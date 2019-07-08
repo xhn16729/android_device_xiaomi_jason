@@ -54,9 +54,6 @@ on fs
     restorecon_recursive /mnt/vendor/persist
     write /sys/kernel/boot_adsp/boot 1
 
-    # Bluetooth
-    mkdir /mnt/vendor/persist/wlan_bt 0770 system system
-
 on post-fs
     start vendor.qseecomd
     exec - system system -- /vendor/bin/init.qti.qseecomd.sh
@@ -74,8 +71,9 @@ on post-fs-data
     mkdir /data/misc/seemp 0700 system system
     mkdir /data/vendor/tloc 0700 system drmrpc
 
-    mkdir /data/thermal 0771 system system
-    mkdir /data/thermal/config 0771 system system
+    mkdir /data/vendor/mac_addr 0770 system system
+    mkdir /data/vendor/thermal 0771 root system
+    mkdir /data/vendor/thermal/config 0771 root system
 
 on boot
     start rmt_storage
@@ -421,6 +419,7 @@ on property:vendor.ims.QMI_DAEMON_STATUS=1
 
 on property:vold.decrypt=trigger_restart_framework
    start cnss_diag
+   restart vendor.camera-provider-2-4
 
 service cnss_diag /system/vendor/bin/cnss_diag -q -f -t HELIUM
    class main
@@ -477,6 +476,7 @@ on charger
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
 
+    mkdir /persist 0771 root system
     wait /dev/block/bootdevice/by-name/persist
     mount ext4 /dev/block/bootdevice/by-name/persist /persist nosuid nodev noatime barrier=1
     mkdir /persist/subsys 0770 system system

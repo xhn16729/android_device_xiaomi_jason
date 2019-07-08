@@ -135,7 +135,6 @@ QCOM_BT_USE_BTNV := true
 
 # Camera
 BOARD_QTI_CAMERA_32BIT_ONLY := true
-TARGET_TS_MAKEUP := true
 TARGET_USES_QTI_CAMERA_DEVICE := true
 USE_DEVICE_SPECIFIC_CAMERA := true
 
@@ -226,7 +225,6 @@ TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/recovery/root/recovery.fstab
 
 # RIL
 TARGET_RIL_VARIANT := caf
-TARGET_USES_OLD_MNC_FORMAT := true
 
 # Releasetools
 TARGET_RECOVERY_UPDATER_LIBS := librecovery_updater_jason
