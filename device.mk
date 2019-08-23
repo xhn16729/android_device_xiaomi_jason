@@ -198,6 +198,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.vendor.audio.hw.binder.size_kbyte=1024
 
 PRODUCT_PROPERTY_OVERRIDES += \
+    persist.vendor.audio.spkr.cal.duration=100 \
+    persist.vendor.audio.speaker.prot.enable=true \
+    persist.vendor.audio.spv3.enable=true \
+    persist.vendor.audio.avs.afe_api_version=2 \
     vendor.audio.adm.buffering.ms=6
 
 # Additional native libraries
@@ -280,6 +284,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.opengles.version=196610 \
     ro.sf.lcd_density=420
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.vendor.display.ad=1 \
+    ro.vendor.display.ad.sdr_calib_data=/system/vendor/etc/sdr_config.cfg \
+    ro.vendor.display.ad.hdr_calib_data=/system/vendor/etc/hdr_config.cfg \
+    ro.vendor.display.sensortype=2
 
 # DRM
 PRODUCT_PACKAGES += \
